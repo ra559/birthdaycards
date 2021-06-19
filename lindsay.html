@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Lindsay</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Lato&family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+</head>
+<style>
+    * {
+        transition: all 0.2s ease-in-out;
+    }
+    
+    body {
+        background: #27B3CA;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+    }
+    
+    button {
+        font-family: 'Lato', sans-serif;
+        width: 100%;
+        margin-top: 50%;
+    }
+    
+    .card {
+        background: #fdfdfd;
+        border-radius: 4px;
+        height: 85vh;
+        width: 80vw;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+    
+    .card.hide {
+        opacity: 1;
+    }
+    
+    .card0 {
+        display: block;
+    }
+    
+    @media only screen and (min-width: 1000px) {
+        .card {
+            flex-direction: row-reverse;
+        }
+        .card img.birthday {
+            width: 100%;
+            max-width: 50vw;
+        }
+    }
+    
+    @media only screen and (max-height: 640px) {
+        .card {
+            flex-direction: row-reverse;
+        }
+        .card img.birthday {
+            width: 100%;
+            max-width: 50vw;
+            max-height: unset;
+        }
+    }
+    
+    img.birthday {
+        max-height: 50vh;
+    }
+    
+    .text {
+        padding: 1em;
+    }
+    
+    .muted {
+        opacity: 0.8;
+    }
+    
+    .space {
+        height: 100px;
+    }
+    
+    .card .text h1 {
+        font-family: 'Viaoda Libre', cursive;
+    }
+    
+    .card .text .muted {
+        font-family: 'Caveat';
+    }
+</style>
+
+<body>
+
+    <div class="card0" id="card0">
+        <button class="btn btn-primary" type="submit" onclick="showme();">View Me</button>
+    </div>
+
+    <div class="card" id="card">
+        <img src="https://robertalberto.com/cake.svg" alt="birthday" class="birthday">
+        <div class="text">
+            <h1>Happy Cake Day Lindsay!</h1>
+            <p class="msg">May you find today 1000 reasons and a potato to celebrate!</p>
+            <p class="muted">Robert Alberto</p>
+        </div>
+        <div class="space"></div>
+    </div>
+    <script>
+        function showme() {
+            var x = document.getElementById("card");
+            if (x.classList.contains("hide")) {
+                x.classList.remove("hide");
+            } else {
+                x.classList.add("hide");
+            }
+
+            var y = document.getElementById("card0");
+            if (y.style.display === "none") {
+                y.style.display = "block";
+            } else {
+                y.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+
+</html>
